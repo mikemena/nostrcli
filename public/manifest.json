@@ -3,17 +3,17 @@
   "name": "Nostr Client",
   "icons": [
     {
-      "src": "favicon.svg",
+      "src": "banana.svg",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "circle.svg",
+      "src": "banana.svg",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "circle.svg",
+      "src": "banana.svg",
       "type": "image/png",
       "sizes": "512x512"
     }
