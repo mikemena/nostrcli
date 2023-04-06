@@ -8,6 +8,7 @@ import {
   signEvent
 } from 'nostr-tools';
 import { useState, useEffect } from 'react';
+import Relay from './components/relays';
 
 function App() {
   const [sk, setSk] = useState(generatePrivateKey());
@@ -104,6 +105,7 @@ function App() {
             </p>
           ))}
       </div>
+      <Relay></Relay>
     </div>
   );
 }

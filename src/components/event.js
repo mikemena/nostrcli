@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const AddTask = ({ onAdd, task, darkMode }) => {
+const Event = ({ onAdd, task, darkMode }) => {
   console.log('task passed in', task);
   var today = new Date();
   const dd = String(today.getDate()).padStart(2, '0');
@@ -10,27 +10,6 @@ const AddTask = ({ onAdd, task, darkMode }) => {
   const [text, setText] = useState('');
   const [day, setDay] = useState(today);
   const [reminder, setReminder] = useState(false);
-
-  //Handle Submit
-  const onSubmit = e => {
-    e.preventDefault();
-    if (!text) {
-      alert('Please add a task');
-      return;
-    } else {
-      onAdd({ text, day, reminder });
-      setText('');
-      setDay('');
-      setReminder(false);
-    }
-  };
-
-  //Handle Clear Task Form
-  const onClear = () => {
-    setText('');
-    setDay(today);
-    setReminder(false);
-  };
 
   return (
     <form className='add-form' onSubmit={onSubmit}>
@@ -86,4 +65,4 @@ const AddTask = ({ onAdd, task, darkMode }) => {
   );
 };
 
-export default AddTask;
+export default Event;
