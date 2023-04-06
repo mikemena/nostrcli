@@ -14,6 +14,8 @@ function App() {
   const [pk, setPk] = useState(getPublicKey(sk));
   const [relay, setRelay] = useState(null);
   const [pubStatus, setPubStatus] = useState('');
+  const [newEvent, setNewEvent] = useState(null);
+  const [events, setEvents] = useState(null);
 
   useEffect(() => {
     const connectRelay = async () => {
@@ -35,7 +37,7 @@ function App() {
     pubkey: pk,
     created_at: Math.floor(Date.now() / 1000),
     tags: [],
-    content: 'Testing nostr from a react client'
+    content: 'Tokyo is testing nostr from a react client'
   };
 
   event.id = getEventHash(event);
@@ -52,6 +54,27 @@ function App() {
     });
   };
 
+  const getEvent = async () => {
+    var sub = relay.sub([
+      {
+        kinds: [1],
+        authors: [pk]
+      }
+    ]);
+    sub.on('event', event => {
+      setNewEvent(event);
+    });
+  };
+
+  const getEvents = async () => {
+    var events = await relay.list([
+      {
+        kinds: [1]
+      }
+    ]);
+    setEvents(events);
+  };
+
   return (
     <div className='App'>
       <header className='App-header'>
@@ -64,6 +87,22 @@ function App() {
       <div>
         <button onClick={() => publishEvent(event)}>Publish event</button>
         <p>Publish status: {pubStatus}</p>
+        <button onClick={() => getEvent()}>subscribe event</button>
+        {newEvent ? (
+          <p>Subscribed event content: {newEvent.content}</p>
+        ) : (
+          <p>no new event</p>
+        )}
+        <button onClick={() => getEvents()}>load feedt</button>
+        {events !== null &&
+          events.map(event => (
+            <p
+              key={event.sig}
+              style={{ borderStyle: 'dashed', color: '#ffe200', padding: 10 }}
+            >
+              {event.content}
+            </p>
+          ))}
       </div>
     </div>
   );
