@@ -38,5 +38,13 @@
 }
 
 h1 {
-  color: #ffe200;
+  font-family: 'Nunito', sans-serif;
+  -moz-text-fill-color: #ffe200;
+  -webkit-text-fill-color: #ffe200;
+  -moz-text-stroke-color: #1e1e1e;
+  -webkit-text-stroke-color: #1e1e1e;
+  -moz-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 2px;
+  font-size: 50px;
+  margin-top: 20vh;
 }
