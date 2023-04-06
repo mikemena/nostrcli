@@ -55,8 +55,8 @@ function App() {
   return (
     <div className='App'>
       <header className='App-header'>
-        <h1>nosrtcli</h1>
         <img src={logo} className='App-logo' alt='logo' />
+        <h1 className='site-title'>nosrtcli</h1>
         <p>private key: {sk}</p>
         <p>public key: {pk}</p>
         {relay ? <p>Connected to {relay.url}</p> : <p>Could not connect</p>}
