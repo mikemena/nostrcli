@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { toppings } from '../utils/toppings';
+import 
 
 const getFormattedPrice = price => `$${price?.toFixed(2)}`;
 
@@ -37,7 +38,7 @@ export default function App() {
         {toppings.map(({ name, price }, index) => {
           return (
             <li key={index}>
-              <div className='toppings-list-item'>
+              <div className='list-item'>
                 <div className='left-section'>
                   <input
                     type='checkbox'
