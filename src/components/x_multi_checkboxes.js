@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { toppings } from '../utils/toppings';
-import 
+import '../styles/multi_checkboxes.css';
 
 const getFormattedPrice = price => `$${price?.toFixed(2)}`;
 
