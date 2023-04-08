@@ -3,15 +3,12 @@ import { toppings } from '../utils/toppings';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
-
-const getFormattedPrice = price => `$${price?.toFixed(2)}`;
+import '../App.css';
 
 export default function App() {
   const [checkedState, setCheckedState] = useState(
     new Array(toppings.length).fill(false)
   );
-
-  const [total, setTotal] = useState(0);
 
   const handleOnChange = position => {
     const updatedCheckedState = checkedState.map((item, index) =>
@@ -19,26 +16,27 @@ export default function App() {
     );
 
     setCheckedState(updatedCheckedState);
-
-    const totalPrice = updatedCheckedState.reduce(
-      (sum, currentState, index) => {
-        if (currentState === true) {
-          return sum + toppings[index].price;
-        }
-        return sum;
-      },
-      0
-    );
-
-    setTotal(totalPrice);
+    console.log(checkedState);
   };
 
   return (
-    <div className='App'>
+    <div className='form-container'>
       <h3>Select Toppings</h3>
-      <FormGroup>
+      <FormGroup className='formgroup'>
         {toppings.map(({ name }, index) => {
-          return <FormControlLabel control={<Switch />} label={name} />;
+          return (
+            <FormControlLabel
+              control={
+                <Switch
+                  color='warning'
+                  id={`custom-checkbox-${index}`}
+                  checked={checkedState[index]}
+                  onChange={() => handleOnChange(index)}
+                />
+              }
+              label={name}
+            />
+          );
         })}
       </FormGroup>
     </div>

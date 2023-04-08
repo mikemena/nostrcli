@@ -62,3 +62,8 @@ h1 {
   font-size: 50px;
   margin-top: 20vh;
 }
+
+.formgroup {
+  padding: 0px 0px 200px 50%;
+  width: 10em;
+}
