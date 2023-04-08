@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { toppings } from '../utils/toppings';
-import '../styles/multi_checkboxes.css';
+import Checkbox from '@mui/material/Checkbox';
 
 const getFormattedPrice = price => `$${price?.toFixed(2)}`;
 
@@ -40,7 +40,7 @@ export default function App() {
             <li key={index}>
               <div className='list-item'>
                 <div className='left-section'>
-                  <input
+                  <Checkbox
                     type='checkbox'
                     id={`custom-checkbox-${index}`}
                     name={name}

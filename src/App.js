@@ -9,8 +9,9 @@ import {
 } from 'nostr-tools';
 import { useState, useEffect } from 'react';
 // import Relay from './components/relays';
-import Check from './components/x_checkbox';
-import MultiCheck from './components/x_multi_checkboxes';
+// import Check from './components/x_checkbox';
+// import MultiCheck from './components/x_multi_checkboxes';
+import MultiSwitches from './components/x_multi_switches';
 
 function App() {
   const [sk, setSk] = useState(generatePrivateKey());
@@ -109,7 +110,7 @@ function App() {
       </div>
       {/* <Relay></Relay> */}
       {/* <Check /> */}
-      <MultiCheck />
+      <MultiSwitches />
     </div>
   );
 }
