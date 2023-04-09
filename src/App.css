@@ -3,18 +3,25 @@
   margin: 0;
 }
 
-.App {
-  text-align: center;
+.app {
+  background-color: #282828;
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh; /* or the minimum height of your content */
 }
 
-.App-logo {
-  height: 10vmin;
+.main {
+  flex-grow: 1;
+}
+
+.app-logo {
+  height: 5vmin;
   pointer-events: none;
   margin-top: 0px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .app-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
@@ -23,11 +30,7 @@
   margin-top: 20px;
 }
 
-.App {
-  background-color: #282c34;
-}
-
-.App-header {
+.app-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
