@@ -1,23 +1,8 @@
-import logo from '../banana.svg';
-import Footer from '../components/Footer';
-
-const Home = () => {
+function Home() {
   return (
-    <html>
-      <body>
-        <div className='app'>
-          <div className='main'>
-            <header className='app-header'>
-              <img src={logo} className='App-logo' alt='logo' />
-              <h1 className='site-title'>nosrtcli</h1>
-            </header>
-          </div>
-          <div></div>
-        </div>
-        <Footer />
-      </body>
-    </html>
+    <div>
+      <h1> This is the home page </h1>
+    </div>
   );
-};
-
+}
 export default Home;

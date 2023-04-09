@@ -3,11 +3,19 @@
   margin: 0;
 }
 
+html,
+body,
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
 .app {
   background-color: #282828;
   display: flex;
   flex-flow: column nowrap;
-  min-height: 100vh; /* or the minimum height of your content */
+  min-height: 100%;
 }
 
 .main {
@@ -30,7 +38,7 @@
   margin-top: 20px;
 }
 
-.app-header {
+/* .app-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -39,7 +47,7 @@
   padding-top: 50px;
   font-size: calc(10px + 2vmin);
   color: #ffe200;
-}
+} */
 
 .link {
   color: #ffe200;
@@ -67,8 +75,12 @@ h1 {
 }
 
 footer {
-  margin-top: 30px;
   text-align: center;
+  position: relative;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
   background-color: #282c34;
   color: #ffe200;
 }

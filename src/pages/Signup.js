@@ -12,7 +12,7 @@ import { generatePrivateKey } from 'nostr-tools';
 
 const theme = createTheme();
 
-export default function SignUp() {
+const SignUp = () => {
   // const [sk, setSk] = useState(generatePrivateKey());
   // const [pk, setPk] = useState(getPublicKey(sk));
   const handleSubmit = event => {
@@ -65,4 +65,6 @@ export default function SignUp() {
       </Container>
     </ThemeProvider>
   );
-}
+};
+
+export default SignUp;
