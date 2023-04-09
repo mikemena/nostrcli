@@ -29,6 +29,6 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Learn More
+## Nostr-tools
 
 [nostr-tools](https://github.com/nbd-wtf/nostr-tools).

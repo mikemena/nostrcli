@@ -1,7 +1,8 @@
 import logo from '../banana.svg';
 import SignIn from '../components/signin';
+import SignUp from '../components/signup';
 
-const Home = ({ onAdd }) => {
+const Home = () => {
   return (
     <div className='App'>
       <div>
@@ -11,6 +12,7 @@ const Home = ({ onAdd }) => {
         </header>
       </div>
       <SignIn />
+      <SignUp />
     </div>
   );
 };

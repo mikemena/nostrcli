@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
-import Signup from './signup';
+import SignUp from './signup';
 
 const theme = createTheme();
 
@@ -65,7 +65,7 @@ export default function SignIn() {
               Sign In
             </Button>
             <Grid item>
-              <Link href={Signup} variant='body2'>
+              <Link href={<SignUp />} variant='body4'>
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
