@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
-import SignUp from './signup';
+import SignUp from './Signup';
 
 const theme = createTheme();
 

@@ -38,8 +38,8 @@
   color: #ffe200;
 }
 
-.App-link {
-  color: #61dafb;
+.link {
+  color: #ffe200;
 }
 
 @keyframes App-logo-spin {
@@ -66,4 +66,6 @@ h1 {
 footer {
   margin-top: 30px;
   text-align: center;
+  background-color: #282c34;
+  color: #ffe200;
 }

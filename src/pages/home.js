@@ -1,6 +1,6 @@
 import logo from '../banana.svg';
-import SignIn from '../components/signin';
-import SignUp from '../components/signup';
+import SignIn from './Signin';
+import SignUp from '../pages/Signup';
 
 const Home = () => {
   return (
@@ -11,8 +11,6 @@ const Home = () => {
           <h1 className='site-title'>nosrtcli</h1>
         </header>
       </div>
-      <SignIn />
-      <SignUp />
     </div>
   );
 };
