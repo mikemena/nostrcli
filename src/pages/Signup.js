@@ -7,9 +7,6 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-const theme = createTheme();
 
 export default function SignInSide() {
   const handleSubmit = event => {
@@ -33,77 +30,60 @@ export default function SignInSide() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Grid container component='main' sx={{ height: '100vh' }}>
-        <CssBaseline />
-        <Grid
-          item
-          xs={false}
-          sm={4}
-          md={7}
+    <Grid container component='main' sx={{ height: '100vh' }}>
+      <CssBaseline />
+      <Grid className='grid' item xs={false} sm={4} md={7} />
+      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+        <Box
           sx={{
-            backgroundImage: 'url(https://source.unsplash.com/random)',
-            backgroundRepeat: 'no-repeat',
-            backgroundColor: t =>
-              t.palette.mode === 'light'
-                ? t.palette.grey[50]
-                : t.palette.grey[900],
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
+            my: 2,
+            mx: 4,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
           }}
-        />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+        >
+          <img
+            src='../banana.svg'
+            alt='triangle with all three sides equal'
+            height='87'
+            width='100'
+          />
+          <Typography component='h1' variant='h1'>
+            nostrcli
+          </Typography>
           <Box
-            sx={{
-              my: 2,
-              mx: 4,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center'
-            }}
+            component='form'
+            noValidate
+            onSubmit={handleSubmit}
+            sx={{ mt: 1 }}
           >
-            <img
-              src='../banana.svg'
-              alt='triangle with all three sides equal'
-              height='87'
-              width='100'
+            <TextField
+              margin='normal'
+              required
+              fullWidth
+              id='name'
+              label='Name'
+              name='name'
+              autoComplete='name'
+              autoFocus
+              sx={textFieldStyle}
             />
-            <Typography component='h1' variant='h1'>
-              nostrcli
-            </Typography>
-            <Box
-              component='form'
-              noValidate
-              onSubmit={handleSubmit}
-              sx={{ mt: 1 }}
-            >
-              <TextField
-                margin='normal'
-                required
-                fullWidth
-                id='name'
-                label='Name'
-                name='name'
-                autoComplete='name'
-                autoFocus
-                sx={textFieldStyle}
-              />
 
-              <Button
-                type='submit'
-                fullWidth
-                variant='contained'
-                class='primary-button'
-              >
-                Sign Up
-              </Button>
-              <Link href='/' class='link'>
-                {'Already have an account? Sign In'}
-              </Link>
-            </Box>
+            <Button
+              type='submit'
+              fullWidth
+              variant='contained'
+              class='primary-button'
+            >
+              Sign Up
+            </Button>
+            <Link href='/' class='link'>
+              {'Already have an account? Sign In'}
+            </Link>
           </Box>
-        </Grid>
+        </Box>
       </Grid>
-    </ThemeProvider>
+    </Grid>
   );
 }

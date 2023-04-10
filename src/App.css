@@ -99,3 +99,10 @@
 .text-field {
   border-color: #ffe200;
 }
+
+.grid {
+  background-image: url('./ostrich.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
