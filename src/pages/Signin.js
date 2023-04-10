@@ -5,16 +5,13 @@ import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
-import Typography from '@mui/material/Typography';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-const theme = createTheme();
-
-export default function SignInSide() {
+export default function SignIn() {
   const handleSubmit = event => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -24,64 +21,63 @@ export default function SignInSide() {
     });
   };
 
+  const textFieldStyle = {
+    '& label.Mui-focused': {
+      color: '#282c34'
+    },
+    '& .MuiOutlinedInput-root': {
+      '&.Mui-focused fieldset': {
+        borderColor: '#ffe200'
+      }
+    }
+  };
+
   return (
-    <ThemeProvider theme={theme}>
-      <Grid container component='main' sx={{ height: '100vh' }}>
-        <CssBaseline />
-        <div class='main-image'></div>
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          <Box
-            sx={{
-              my: 2,
-              mx: 4,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center'
-            }}
+    <Container class='container'>
+      <Header />
+      <CssBaseline />
+      <Box
+        sx={{
+          marginTop: 8,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center'
+        }}
+      >
+        <Box component='form' onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <TextField
+            margin='normal'
+            required
+            fullWidth
+            id='email'
+            label='username'
+            name='username'
+            autoComplete='username'
+            autoFocus
+            sx={textFieldStyle}
+          />
+
+          <FormControlLabel
+            control={<Checkbox value='remember' color='primary' />}
+            label='Remember me'
+          />
+          <Button
+            class='primary-button'
+            type='submit'
+            fullWidth
+            variant='contained'
+            sx={{ mt: 3, mb: 2 }}
           >
-            <img
-              src='../banana.svg'
-              alt='triangle with all three sides equal'
-              height='87'
-              width='100'
-            />
-            <Typography component='h1' variant='h1'>
-              nostrcli
-            </Typography>
-            <Box
-              component='form'
-              noValidate
-              onSubmit={handleSubmit}
-              sx={{ mt: 1 }}
-            >
-              <TextField
-                margin='normal'
-                required
-                fullWidth
-                id='email'
-                label='Private Key'
-                name='private key'
-                autoFocus
-              />
-              <FormControlLabel
-                control={<Checkbox value='remember' color='primary' />}
-                label='Remember me'
-              />
-              <Button
-                class='primary-button'
-                type='submit'
-                fullWidth
-                variant='contained'
-              >
-                Sign In
-              </Button>
-              <Link href='./Signup' class='link' variant='body2'>
-                {"Don't have an account? Sign Up"}
-              </Link>
-            </Box>
-          </Box>
-        </Grid>
-      </Grid>
-    </ThemeProvider>
+            Sign In
+          </Button>
+          <Grid container>
+            <Link class='link' href='./Signup'>
+              {"Don't have an account? Sign Up"}
+            </Link>
+          </Grid>
+        </Box>
+      </Box>
+      <Footer />
+    </Container>
   );
 }

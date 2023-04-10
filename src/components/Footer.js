@@ -2,11 +2,16 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className='footer'>
-      <p>Copyright &copy; 2023</p>
-      <Link to='/about' className='link'>
-        About
-      </Link>
+    <footer class='footer-container'>
+      <a
+        class='footer-link'
+        rel='noopener noreferrer'
+        href='https://www.tky.dev'
+        target='_blank'
+      >
+        tky.dev
+      </a>{' '}
+      {new Date().getFullYear()}
     </footer>
   );
 };

@@ -21,6 +21,17 @@ export default function SignInSide() {
     });
   };
 
+  const textFieldStyle = {
+    '& label.Mui-focused': {
+      color: '#282c34'
+    },
+    '& .MuiOutlinedInput-root': {
+      '&.Mui-focused fieldset': {
+        borderColor: '#ffe200'
+      }
+    }
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <Grid container component='main' sx={{ height: '100vh' }}>
@@ -75,6 +86,7 @@ export default function SignInSide() {
                 name='name'
                 autoComplete='name'
                 autoFocus
+                sx={textFieldStyle}
               />
 
               <Button
@@ -85,7 +97,7 @@ export default function SignInSide() {
               >
                 Sign Up
               </Button>
-              <Link href='/' class='link' variant='body2'>
+              <Link href='/' class='link'>
                 {'Already have an account? Sign In'}
               </Link>
             </Box>
