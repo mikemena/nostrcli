@@ -9,31 +9,38 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { generatePrivateKey, getPublicKey } from 'nostr-tools';
 
-// Add Task
-const addUser = async user => {
-  const res = await fetch('http://localhost:3001/users', {
-    method: 'POST',
-    headers: {
-      'Content-type': 'application/json'
-    },
-    body: JSON.stringify(user)
-  });
-};
-
 const SignUp = () => {
-  let privateKey = generatePrivateKey(); // `sk` is a hex string
-  let publicKey = getPublicKey(privateKey); // `pk` is a hex string
-  console.log('Public Key', publicKey);
-  console.log('Private Key', privateKey);
-
   const [username, setUsername] = useState('');
-  const onChangeHandler = e => {
+  const [users, setUsers] = useState([]);
+
+  // Add User
+  const addUser = async user => {
+    const res = await fetch('http://localhost:3001/users', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    });
+    const data = await res.json();
+    setUsers([...users, data]);
+  };
+
+  //Handle Submit
+  const onSubmit = e => {
     e.preventDefault();
-    setUsername(e.target.value);
-
+    let sk = generatePrivateKey(); // `sk` is a hex string
+    let pk = getPublicKey(sk); // `pk` is a hex string
     let username = e.target.value;
-
-    console.log('username', username);
+    console.log('Public Key', pk);
+    console.log('Private Key', sk);
+    if (!username) {
+      alert('Please add a username');
+      return;
+    } else {
+      addUser({ username, pk, sk });
+      setUsername('');
+    }
   };
 
   const textFieldStyle = {
@@ -70,24 +77,24 @@ const SignUp = () => {
           <Typography component='h1' variant='h1'>
             nostrcli
           </Typography>
-          <Box component='form' noValidate onSubmit={addUser} sx={{ mt: 1 }}>
+          <Box component='form' noValidate onSubmit={onSubmit} sx={{ mt: 1 }}>
             <TextField
               value={username}
-              onChange={onChangeHandler}
+              onChange={e => setUsername(e.target.value)}
               margin='normal'
               required
               fullWidth
-              id='name'
-              label='Name'
-              name='name'
-              autoComplete='name'
+              id='username'
+              label='username'
+              name='username'
+              autoComplete='username'
               autoFocus
               sx={textFieldStyle}
             />
 
             <Button
               type='submit'
-              onClick={addUser}
+              onClick={onSubmit}
               fullWidth
               variant='contained'
               className='primary-button'

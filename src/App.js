@@ -1,6 +1,5 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
 import SignIn from './pages/Signin';
 import SignUp from './pages/Signup';
 import NoMatch from './pages/NoMatch';
