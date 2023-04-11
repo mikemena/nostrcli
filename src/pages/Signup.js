@@ -7,11 +7,10 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import { generatePrivateKey, getPublicKey } from 'nostr-tools';
+// import { generatePrivateKey, getPublicKey } from 'nostr-tools';
 
 const SignUp = () => {
   const [username, setUsername] = useState('');
-  const [users, setUsers] = useState([]);
 
   // Add User
   const addUser = async user => {
@@ -23,22 +22,22 @@ const SignUp = () => {
       body: JSON.stringify(user)
     });
     const data = await res.json();
-    setUsers([...users, data]);
+    console.log(data);
   };
 
   //Handle Submit
   const onSubmit = e => {
     e.preventDefault();
-    let sk = generatePrivateKey(); // `sk` is a hex string
-    let pk = getPublicKey(sk); // `pk` is a hex string
-    let username = e.target.value;
-    console.log('Public Key', pk);
-    console.log('Private Key', sk);
+    // let sk = generatePrivateKey(); // `sk` is a hex string
+    // let pk = getPublicKey(sk); // `pk` is a hex string
+
+    // console.log('Public Key', pk);
+    // console.log('Private Key', sk);
     if (!username) {
       alert('Please add a username');
       return;
     } else {
-      addUser({ username, pk, sk });
+      addUser({ username });
       setUsername('');
     }
   };
