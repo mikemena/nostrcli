@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import { generatePrivateKey, getPublicKey } from 'nostr-tools';
 
 const SignUp = () => {
-  const [username, setUsername] = useState('');
+  const [alias, setAlias] = useState('');
 
   // Route to homepage
   let navigate = useNavigate();
@@ -41,12 +41,12 @@ const SignUp = () => {
 
     console.log('Public Key', pk);
     console.log('Private Key', sk);
-    if (!username) {
+    if (!alias) {
       alert('Please add a username');
       return;
     } else {
-      addUser({ username, pk, sk });
-      setUsername('');
+      addUser({ alias, pk, sk });
+      setAlias('');
       routeChange();
     }
   };
@@ -87,15 +87,15 @@ const SignUp = () => {
           </Typography>
           <Box component='form' noValidate onSubmit={onSubmit} sx={{ mt: 1 }}>
             <TextField
-              value={username}
-              onChange={e => setUsername(e.target.value)}
+              value={alias}
+              onChange={e => setAlias(e.target.value)}
               margin='normal'
               required
               fullWidth
-              id='username'
-              label='username'
-              name='username'
-              autoComplete='username'
+              id='alias'
+              label='alias'
+              name='alias'
+              autoComplete='alias'
               autoFocus
               sx={textFieldStyle}
             />
