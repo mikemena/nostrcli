@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
-    <footer class='footer-container'>
+    <footer className='footer-container'>
       <a
-        class='footer-link'
+        className='footer-link'
         rel='noopener noreferrer'
         href='https://www.tky.dev'
         target='_blank'

@@ -33,7 +33,7 @@ export default function SignIn() {
   };
 
   return (
-    <Container class='container'>
+    <Container className='container'>
       <Header />
       <CssBaseline />
       <Box
@@ -49,10 +49,10 @@ export default function SignIn() {
             margin='normal'
             required
             fullWidth
-            id='email'
-            label='username'
-            name='username'
-            autoComplete='username'
+            id='privateKey'
+            label='Private Key'
+            name='privateKey'
+            autoComplete='privateKey'
             autoFocus
             sx={textFieldStyle}
           />
@@ -62,7 +62,7 @@ export default function SignIn() {
             label='Remember me'
           />
           <Button
-            class='primary-button'
+            className='primary-button'
             type='submit'
             fullWidth
             variant='contained'
@@ -71,7 +71,7 @@ export default function SignIn() {
             Sign In
           </Button>
           <Grid container>
-            <Link class='link' href='./Signup'>
+            <Link className='link' href='./Signup'>
               {"Don't have an account? Sign Up"}
             </Link>
           </Grid>
