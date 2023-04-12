@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -7,12 +8,19 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-// import { generatePrivateKey, getPublicKey } from 'nostr-tools';
+import { generatePrivateKey, getPublicKey } from 'nostr-tools';
 
 const SignUp = () => {
   const [username, setUsername] = useState('');
 
-  // Add User
+  // Route to homepage
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = `/`;
+    navigate(path);
+  };
+
+  // Add User to database
   const addUser = async user => {
     const res = await fetch('http://localhost:3001/users', {
       method: 'POST',
@@ -28,17 +36,18 @@ const SignUp = () => {
   //Handle Submit
   const onSubmit = e => {
     e.preventDefault();
-    // let sk = generatePrivateKey(); // `sk` is a hex string
-    // let pk = getPublicKey(sk); // `pk` is a hex string
+    let sk = generatePrivateKey(); // `sk` is a hex string
+    let pk = getPublicKey(sk); // `pk` is a hex string
 
-    // console.log('Public Key', pk);
-    // console.log('Private Key', sk);
+    console.log('Public Key', pk);
+    console.log('Private Key', sk);
     if (!username) {
       alert('Please add a username');
       return;
     } else {
-      addUser({ username });
+      addUser({ username, pk, sk });
       setUsername('');
+      routeChange();
     }
   };
 
