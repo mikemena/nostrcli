@@ -11,7 +11,7 @@ import Container from '@mui/material/Container';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-export default function SignIn() {
+const SignIn = () => {
   const handleSubmit = event => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -80,4 +80,6 @@ export default function SignIn() {
       <Footer />
     </Container>
   );
-}
+};
+
+export default SignIn;

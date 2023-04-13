@@ -1,48 +1,31 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
   "users": [
     {
-      "username": "ree",
+      "alias": "nym",
+      "pk": "b82c3366392253dac8825e3cd2492d460ad81b203a4735846919b6bf2409b1ed",
+      "sk": "49347ec59327608d3be92287bca503b55a32832ee7ed2ba61c35327454e1efea",
+      "id": 6
+    }
+  ],
+  "relays": [
+    {
+      "path": "wss://relay.damus.io",
       "id": 1
     },
     {
-      "username": "cooper",
-      "pk": "2f7cd9c1de0d2b2dcfa4bb9df8e3b727014ff839f5315c25822efb34a03a4b5d",
-      "sk": "b108f331a7fbdd2abfdf4921ab78c1f316af1ae2b06d7c507db4aee5845363e8",
+      "path": "wss://nostr.mom",
       "id": 2
     },
     {
-      "username": "tess",
-      "pk": "153a4c566ad5a564e44ab0bde655f1fd7732da2027a9d65c344307d8e69d2ed8",
-      "sk": "019c90b98dc0e8596dda7a17ca5ce1955bc5fa263f9aa02726a1d20f2ff3a4b9",
+      "path": "wss://nos.lol",
       "id": 3
     },
     {
-      "username": "test",
-      "pk": "5254e43af213ab31b25fa4f48621a86f85784e78681434cd5ebbfd3960236522",
-      "sk": "eb5a5973f63719a768de57d2cafb75c2f059109f931691eb32c314e347117855",
+      "path": "wss://bitcoiner.social",
       "id": 4
     },
     {
-      "username": "test",
-      "pk": "97b03b71479d640ec7fa080e13d7027b1967a6c687fd6274597eeffb67111d7a",
-      "sk": "fba86e7b7816b240cd652780ae161f9082dda60217aa0be62f96198b54d5e15d",
+      "path": "wss://nostr.plebchain.org",
       "id": 5
     }
   ]

@@ -1,0 +1,41 @@
+.page {
+  box-sizing: border-box;
+  display: flex;
+}
+
+.signup-image,
+.signup-form {
+  flex: 50%;
+  padding: 10px;
+}
+
+.grid {
+  background-image: url('../ostrich.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.form > label {
+  bottom: 34px;
+  left: 15px;
+  position: relative;
+  background-color: white;
+  padding: 0px 5px 0px 5px;
+  font-size: 1.1em;
+  transition: 0.2s;
+  pointer-events: none;
+}
+
+.form-control:focus ~ label {
+  bottom: 55px;
+}
+
+.form-control:valid ~ label {
+  bottom: 55px;
+}
+
+.input-container {
+  height: 200px;
+  position: relative;
+}
