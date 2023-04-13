@@ -1,5 +1,5 @@
 import './App.css';
-import './styles/signup.css';
+
 import { Routes, Route } from 'react-router-dom';
 import SignIn from './pages/Signin';
 import SignUp from './pages/SignUp';

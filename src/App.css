@@ -7,6 +7,10 @@
   padding: 0;
 }
 
+.page {
+  background: #f4f2ed;
+}
+
 .link {
   color: #8e6c49;
   width: 100%;
@@ -102,30 +106,30 @@
 input,
 textarea {
   background: none;
-  color: #c6c6c6;
+  color: #636870;
   font-size: 18px;
   padding: 10px 10px 10px 15px;
   display: block;
   width: 320px;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 1px solid #c6c6c6;
 }
 input:hover {
-  border: 3px solid black;
+  border: 1px solid #636870;
 }
 input:focus,
 textarea:focus {
   outline: none;
-  border: 3px solid black;
+  border: 1px solid #636870;
 }
 input:focus ~ label,
 input:valid ~ label,
 textarea:focus ~ label,
 textarea:valid ~ label {
   top: -5px;
-  font-size: 12px;
-  color: #000;
+  font-size: 16px;
+  color: #636870;
   left: 11px;
 }
 input:focus ~ .bar:before,
@@ -140,7 +144,7 @@ input[type='password'] {
   position: relative;
 }
 label {
-  color: #c6c6c6;
+  color: #636870;
   font-size: 16px;
   font-weight: normal;
   position: absolute;
@@ -148,6 +152,6 @@ label {
   left: 15px;
   top: 12px;
   transition: 300ms ease all;
-  background-color: #fff;
+  background-color: #f4f2ed;
   padding: 0 2px;
 }

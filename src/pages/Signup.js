@@ -45,29 +45,31 @@ const SignUp = () => {
 
   return (
     <div className='page'>
-      <aside className='signup-image'></aside>
       <div className='signup-form'>
-        <img
-          src='../banana.svg'
-          alt='triangle with all three sides equal'
-          height='87'
-          width='100'
-        />
+        <img src='../banana.svg' alt='banana' height='87' width='100' />
         <h2>nostrcli</h2>
         <form action='' method='post' class='form'>
-          <input
-            type='text'
-            name='alias'
-            id='alias'
-            required
-            fullWidth
-            autoComplete='alias'
-            autoFocus
-            value={alias}
-            onChange={e => setAlias(e.target.value)}
-          />
-          <label for='alias'>Alias</label>
-          <input type='submit' onClick={onSubmit} className='primary-button' />
+          <div>
+            <input
+              type='text'
+              name='alias'
+              id='alias'
+              required
+              fullWidth
+              autoComplete='alias'
+              autoFocus
+              value={alias}
+              onChange={e => setAlias(e.target.value)}
+            />
+            <label for='alias'>Alias</label>
+          </div>
+          <div>
+            <input
+              type='submit'
+              onClick={onSubmit}
+              className='primary-button'
+            />
+          </div>
         </form>
       </div>
     </div>
