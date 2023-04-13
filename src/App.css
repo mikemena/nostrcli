@@ -9,6 +9,9 @@
 
 .page {
   background: #f4f2ed;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 .link {
