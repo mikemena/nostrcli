@@ -5,6 +5,12 @@
       "pk": "b82c3366392253dac8825e3cd2492d460ad81b203a4735846919b6bf2409b1ed",
       "sk": "49347ec59327608d3be92287bca503b55a32832ee7ed2ba61c35327454e1efea",
       "id": 6
+    },
+    {
+      "alias": "test",
+      "pk": "5bd0116d366921b630ffeb78199f09d3025f0e354743d61b034edd04c98e28fe",
+      "sk": "bceeccaa5f3ab6efee9088bc92798eb60c3f4043d6d20811288812d096710745",
+      "id": 7
     }
   ],
   "relays": [

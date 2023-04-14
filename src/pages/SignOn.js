@@ -45,10 +45,10 @@ const SignUp = () => {
 
   return (
     <div className='page'>
-      <div className='signup-form'>
+      <div className='page'>
         <img src='../banana.svg' alt='banana' height='87' width='100' />
         <h2>nostrcli</h2>
-        <form action='' method='post' class='form'>
+        <form action='' method='post'>
           <div>
             <input
               type='text'

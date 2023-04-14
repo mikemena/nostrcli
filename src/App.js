@@ -2,13 +2,13 @@ import './App.css';
 
 import { Routes, Route } from 'react-router-dom';
 import SignIn from './pages/Signin';
-import SignUp from './pages/SignUp';
+import SignUp from './pages/SignOn';
 import NoMatch from './pages/NoMatch';
 import Relays from './pages/Relays';
 
 function App() {
   return (
-    <div className='App'>
+    <div className='app'>
       <Routes>
         <Route path='/' element={<SignIn />} />
         <Route path='/signup' element={<SignUp />} />
