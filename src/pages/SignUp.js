@@ -44,9 +44,9 @@ const SignUp = () => {
   };
 
   return (
-    <div className='page'>
+    <div className='form-section'>
       <form action='' method='post' className='form'>
-        <div className='input'>
+        <div className='input-wrapper'>
           <input
             className='input-text'
             placeholder='Alias'
@@ -64,7 +64,7 @@ const SignUp = () => {
             Alias
           </label>
         </div>
-        <div>
+        <div className='input-wrapper'>
           <input type='submit' onClick={onSubmit} className='primary-button' />
         </div>
       </form>
