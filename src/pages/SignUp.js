@@ -47,18 +47,20 @@ const SignUp = () => {
     <div className='form-section'>
       <form action='' method='post' className='form'>
         <div className='input-wrapper'>
-          <label className='input-label' for='alias'>
-            Alias
-          </label>
           <input
             className='input-text'
             type='text'
             name='alias'
+            placeholder='alias'
             id='alias'
             value={alias}
             onChange={e => setAlias(e.target.value)}
           />
+          <label for='alias' className='input-label'>
+            Alias
+          </label>
         </div>
+
         <div>
           <input type='submit' onClick={onSubmit} className='primary-button' />
         </div>
