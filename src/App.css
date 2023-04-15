@@ -75,9 +75,6 @@ body {
   text-align: center;
   width: 100%;
   background-color: #282c34;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
 }
 
 .header-item {
@@ -89,6 +86,8 @@ body {
   -moz-text-stroke-width: 1px;
   -webkit-text-stroke-width: 1px;
   font-size: 40px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer-link {
@@ -111,23 +110,6 @@ body {
   text-align: center;
 }
 
-.primary-button {
-  background-color: #ffe200;
-  text-align: center;
-  color: #282c34;
-  width: 60%;
-  height: 40px;
-  border-radius: 8px;
-  text-transform: uppercase;
-  border: 0;
-  font-size: 0.875em;
-  font-weight: 500;
-  cursor: pointer;
-  margin: 20px 20px 10px 20px;
-  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-}
-
 .primary-button:hover {
   background-color: #dbc204;
   color: #282c34;
@@ -146,7 +128,7 @@ body {
 
 .input-wrapper {
   position: relative;
-  padding: 15px 0 0 20%;
+  padding: 15px 0 0 10%;
   margin-top: 10px;
 }
 
@@ -161,8 +143,7 @@ body {
 
 .input-text {
   font-family: inherit;
-  /* width: 80%; */
-  /* max-width: 70%; */
+  width: 385px;
   border: 0;
   border-bottom: 2px solid gray;
   outline: 0;
@@ -197,11 +178,39 @@ body {
   width: 100%;
 }
 
+.primary-button {
+  background-color: #ffe200;
+  text-align: center;
+  color: #282c34;
+  width: 250px;
+  height: 40px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  border: 0;
+  font-size: 0.875em;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 20px 20px 10px 20px;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
 @media only screen and (min-width: 600px) {
   /* For tablets: */
   .form {
     width: 60%;
     max-width: 60%;
+  }
+  .primary-button {
+    width: 300px;
+  }
+  /* .input-wrapper {
+    position: relative;
+    padding: 15px 0 0 5%;
+    margin-top: 10px;
+  } */
+  .input-text {
+    width: 350px;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -210,4 +219,10 @@ body {
     width: 60%;
     max-width: 50%;
   }
+  .primary-button {
+    width: 375px;
+  }
+  /* .input-text {
+    width: 80%;
+  } */
 }
