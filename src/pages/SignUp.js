@@ -56,7 +56,7 @@ const SignUp = () => {
             value={alias}
             onChange={e => setAlias(e.target.value)}
           />
-          <label for='alias' className='input-label'>
+          <label htmlFor='alias' className='input-label'>
             Alias
           </label>
         </div>

@@ -167,7 +167,8 @@ body {
 
 .input-text {
   font-family: inherit;
-  width: 100%;
+  width: 70%;
+  max-width: 70%;
   border: 0;
   border-bottom: 2px solid gray;
   outline: 0;
