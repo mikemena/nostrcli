@@ -61,7 +61,9 @@ const SignUp = () => {
           </label>
         </div>
         <div className='button-wrapper'>
-          <input type='submit' onClick={onSubmit} className='primary-button' />
+          <button type='submit' onClick={onSubmit} className='primary-button'>
+            Sign Up
+          </button>
         </div>
         <a className='form-link' href='/'>
           {'Already have an account? Sign In'}

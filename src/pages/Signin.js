@@ -1,85 +1,80 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { generatePrivateKey, getPublicKey } from 'nostr-tools';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 
-const SignIn = () => {
-  const handleSubmit = event => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password')
-    });
+const SignUp = () => {
+  const [alias, setAlias] = useState('');
+
+  // Route to homepage
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = `/`;
+    navigate(path);
   };
 
-  const textFieldStyle = {
-    '& label.Mui-focused': {
-      color: '#282c34'
-    },
-    '& .MuiOutlinedInput-root': {
-      '&.Mui-focused fieldset': {
-        borderColor: '#ffe200'
-      }
+  // Add User to database
+  const addUser = async user => {
+    const res = await fetch('http://localhost:3001/users', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    });
+    const data = await res.json();
+    console.log(data);
+  };
+
+  //Handle Submit
+  const onSubmit = e => {
+    e.preventDefault();
+    let sk = generatePrivateKey(); // `sk` is a hex string
+    let pk = getPublicKey(sk); // `pk` is a hex string
+
+    console.log('Public Key', pk);
+    console.log('Private Key', sk);
+    if (!alias) {
+      alert('Please add a username');
+      return;
+    } else {
+      addUser({ alias, pk, sk });
+      setAlias('');
+      routeChange();
     }
   };
 
   return (
-    <Container className='container'>
+    <>
       <Header />
-      <CssBaseline />
-      <Box
-        sx={{
-          marginTop: 8,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center'
-        }}
-      >
-        <Box component='form' onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-          <TextField
-            margin='normal'
-            required
-            fullWidth
-            id='privateKey'
-            label='Private Key'
-            name='privateKey'
-            autoComplete='privateKey'
-            autoFocus
-            sx={textFieldStyle}
-          />
-
-          <FormControlLabel
-            control={<Checkbox value='remember' color='primary' />}
-            label='Remember me'
-          />
-          <Button
-            className='primary-button'
-            type='submit'
-            fullWidth
-            variant='contained'
-            sx={{ mt: 3, mb: 2 }}
-          >
-            Sign In
-          </Button>
-          <Grid container>
-            <Link className='link' href='./Signup'>
-              {"Don't have an account? Sign Up"}
-            </Link>
-          </Grid>
-        </Box>
-      </Box>
-      <Footer />
-    </Container>
+      <div className='form-section'>
+        <form action='' method='post' className='form'>
+          <div className='input-wrapper'>
+            <input
+              className='input-text'
+              type='text'
+              name='alias'
+              placeholder='alias'
+              id='alias'
+              value={alias}
+              onChange={e => setAlias(e.target.value)}
+            />
+            <label htmlFor='alias' className='input-label'>
+              Alias
+            </label>
+          </div>
+          <div className='button-wrapper'>
+            <button type='submit' onClick={onSubmit} className='primary-button'>
+              Sign In
+            </button>
+          </div>
+          <a className='form-link' href='/Signup'>
+            {'Dont have an account? Sign Up'}
+          </a>
+        </form>
+      </div>
+    </>
   );
 };
 
-export default SignIn;
+export default SignUp;
