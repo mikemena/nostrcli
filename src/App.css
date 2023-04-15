@@ -151,8 +151,12 @@ body {
 }
 
 .input-wrapper {
-  text-align: center;
-  display: block;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
+  color: #24566f;
 }
 
 .input-text {
@@ -171,9 +175,7 @@ body {
 }
 
 .input-text:focus {
-  outline: #ffe200;
-}
-
-.input-label {
-  color: #24566f;
+  border: #7d0c4c;
+  border-style: dashed;
+  background-color: #e8df9b;
 }
