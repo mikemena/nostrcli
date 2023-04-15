@@ -56,12 +56,15 @@ body {
 }
 
 .link {
-  color: #8e6c49;
+  color: #ffe200;
   width: 100%;
   height: 40px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  font-family: inherit;
+  width: 100%;
+  font-size: 1rem;
 }
 
 .link:hover {
@@ -188,14 +191,8 @@ body {
   position: absolute;
   top: 0;
   display: block;
-  transition: 0.2s;
-  font-size: 1rem;
+  transition: 0.3s;
+  font-size: 1.3rem;
   color: #ffe200;
-  font-weight: 700;
-
-  padding-bottom: 6px;
-  font-weight: 700;
-  border-width: 3px;
-  border-image: linear-gradient(to right, $primary, $secondary);
-  border-image-slice: 1;
+  font-weight: 500;
 }
