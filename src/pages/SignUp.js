@@ -63,7 +63,7 @@ const SignUp = () => {
         <div className='button-wrapper'>
           <input type='submit' onClick={onSubmit} className='primary-button' />
         </div>
-        <a className='form-link' href='./Signup'>
+        <a className='form-link' href='/'>
           {'Already have an account? Sign In'}
         </a>
       </form>
