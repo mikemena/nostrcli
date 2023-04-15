@@ -27,6 +27,7 @@ const Header = () => {
           height='87'
           width='100'
         />
+
         <h4 className='header-item'>nostrcli</h4>
       </header>
     </>

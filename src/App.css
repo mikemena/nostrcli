@@ -74,6 +74,10 @@ body {
   display: inline-block;
   text-align: center;
   width: 100%;
+  background-color: #282c34;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .header-item {
