@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { generatePrivateKey, getPublicKey } from 'nostr-tools';
+import Header from '../components/Header';
 
 const SignUp = () => {
   const [alias, setAlias] = useState('');
@@ -44,32 +45,36 @@ const SignUp = () => {
   };
 
   return (
-    <div className='form-section'>
-      <form action='' method='post' className='form'>
-        <div className='input-wrapper'>
-          <input
-            className='input-text'
-            type='text'
-            name='alias'
-            placeholder='alias'
-            id='alias'
-            value={alias}
-            onChange={e => setAlias(e.target.value)}
-          />
-          <label htmlFor='alias' className='input-label'>
-            Alias
-          </label>
-        </div>
-        <div className='button-wrapper'>
-          <button type='submit' onClick={onSubmit} className='primary-button'>
-            Sign Up
-          </button>
-        </div>
-        <a className='form-link' href='/'>
-          {'Already have an account? Sign In'}
-        </a>
-      </form>
-    </div>
+    <>
+      {' '}
+      <Header />
+      <div className='form-section'>
+        <form action='' method='post' className='form'>
+          <div className='input-wrapper'>
+            <input
+              className='input-text'
+              type='text'
+              name='alias'
+              placeholder='alias'
+              id='alias'
+              value={alias}
+              onChange={e => setAlias(e.target.value)}
+            />
+            <label htmlFor='alias' className='input-label'>
+              Alias
+            </label>
+          </div>
+          <div className='button-wrapper'>
+            <button type='submit' onClick={onSubmit} className='primary-button'>
+              Sign Up
+            </button>
+          </div>
+          <a className='form-link' href='/'>
+            {'Already have an account? Sign In'}
+          </a>
+        </form>
+      </div>
+    </>
   );
 };
 
