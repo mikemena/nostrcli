@@ -143,7 +143,7 @@ body {
 
 .input-text {
   font-family: inherit;
-  width: 385px;
+  width: 85%;
   border: 0;
   border-bottom: 2px solid gray;
   outline: 0;
@@ -222,7 +222,21 @@ body {
   .primary-button {
     width: 375px;
   }
-  /* .input-text {
-    width: 80%;
-  } */
+  .input-text {
+    font-family: inherit;
+    width: 385px;
+    border: 0;
+    border-bottom: 2px solid gray;
+    outline: 0;
+    font-size: 1.3rem;
+    color: white;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+  }
+  .input-wrapper {
+    position: relative;
+    padding: 15px 0 0 5%;
+    margin-top: 10px;
+  }
 }
