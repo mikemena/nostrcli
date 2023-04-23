@@ -24,4 +24,14 @@ yarn-error.log*
 
 #directory
 NOTES.md
+/db.json
+db.json
+db.json/
+
+**/*.log
+node_modules
+tmp
+lib
+.DS_Store
+.idea
 db.json
