@@ -218,6 +218,7 @@ body {
   .form {
     width: 60%;
     max-width: 50%;
+    display: grid;
   }
   .primary-button {
     width: 375px;
